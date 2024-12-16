@@ -169,7 +169,9 @@ impl SpendValidatingKey {
         Self::from_bytes(bytes)
     }
 
+    
     /// Parses a `SpendValidatingKey` from its encoded form.
+    #[cfg_attr(feature = "unstable-ledger", visibility::make(pub))]
     pub(crate) fn from_bytes(bytes: &[u8]) -> Option<Self> {
         <[u8; 32]>::try_from(bytes)
             .ok()

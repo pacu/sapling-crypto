@@ -28,6 +28,7 @@ zcash_spec = "0.1"
 
 # Boilerplate
 getset = "0.1"
+visibility = "0.1"
 
 # No-std support
 core2 = { version = "0.3", default-features = false, features = ["alloc"] }
@@ -107,6 +108,9 @@ circuit = [
 ## Enables multithreading support for creating proofs.
 multicore = ["bellman?/multicore"]
 
+## Enables support for Ledger HW wallets by making some `pub(crate)` APIs `pub`
+## with the visibility crate
+unstable-ledger = []
 ### A temporary feature flag that exposes granular APIs needed by `zcashd`. These APIs
 ### should not be relied upon and will be removed in a future release.
 temporary-zcashd = []
